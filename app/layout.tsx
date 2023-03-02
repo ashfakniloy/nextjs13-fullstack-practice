@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "./globals.css";
 import { Inter } from "next/font/google";
 import Session from "../Components/Session";
 import { Toaster } from "../Components/ToastNotification";
