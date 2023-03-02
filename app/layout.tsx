@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Session from "../components/Session";
 import { Toaster } from "../components/ToastNotification";
 import Log from "../components/Log";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,13 +23,14 @@ export default function RootLayout({
       <body
         className={`bg-gray-800 text-gray-100 lg:max-w-[1000px] mx-3 lg:mx-auto ${inter.className}`}
       >
-        <Log />
         <Toaster
           toastOptions={{
             duration: 3000,
           }}
         />
         <Session>{children}</Session>
+        <Analytics />
+        <Log />
       </body>
     </html>
   );
