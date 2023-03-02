@@ -2,12 +2,12 @@ import { getServerSession } from "next-auth";
 import { formatDistanceToNow } from "date-fns";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import CommentsForm from "../../../../Components/CommentsForm";
-import LikeButton from "../../../../Components/LikeButton";
+import CommentsForm from "../../../../components/CommentsForm";
+import LikeButton from "../../../../components/LikeButton";
 import { prisma } from "../../../../lib/prisma";
 import { authOptions } from "../../../../pages/api/auth/[...nextauth]";
-import DeleteComment from "../../../../Components/DeleteComment";
-import Back from "../../../../Components/Back";
+import DeleteComment from "../../../../components/DeleteComment";
+import Back from "../../../../components/Back";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";

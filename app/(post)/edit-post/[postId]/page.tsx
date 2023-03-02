@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import PostForm from "../../../../Components/PostForm";
+import PostForm from "../../../../components/PostForm";
 import { prisma } from "../../../../lib/prisma";
 
 export const dynamic = "force-dynamic";

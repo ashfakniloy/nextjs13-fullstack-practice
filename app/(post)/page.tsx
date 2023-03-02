@@ -1,10 +1,10 @@
-import Post from "../../Components/Post";
+import Post from "../../components/Post";
 import { prisma } from "../../lib/prisma";
 // import { getServerSession } from "next-auth/next";
 // import { authOptions } from "../../pages/api/auth/[...nextauth]";
-import Search from "../../Components/Search";
-import Pagination from "../../Components/Pagination";
-import { RefreshPage } from "../../Components/RefreshPage";
+import Search from "../../components/Search";
+import Pagination from "../../components/Pagination";
+import { RefreshPage } from "../../components/RefreshPage";
 
 export const dynamic = "force-dynamic";
 

@@ -1,5 +1,5 @@
 import { prisma } from "../../../../lib/prisma";
-import Post from "../../../../Components/Post";
+import Post from "../../../../components/Post";
 import type { Metadata } from "next";
 
 export const dynamic = "auto";

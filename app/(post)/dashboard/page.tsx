@@ -1,5 +1,5 @@
 import Link from "next/link";
-import DeletePost from "../../../Components/DeletePost";
+import DeletePost from "../../../components/DeletePost";
 import { prisma } from "../../../lib/prisma";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "../../../pages/api/auth/[...nextauth]";

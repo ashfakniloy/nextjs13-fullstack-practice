@@ -1,4 +1,4 @@
-import PostForm from "../../../Components/PostForm";
+import PostForm from "../../../components/PostForm";
 
 export const metadata = {
   title: "Add new post",
