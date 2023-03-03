@@ -86,7 +86,7 @@ function Post({
           )} */}
         </div>
       </div>
-      <Link href={`/post/${id}`} prefetch={false}>
+      <Link href={`/post/${id}`}>
         <button className="text-xs font-bold bg-cyan-800 px-3 py-2 rounded-md details uppercase">
           Details
         </button>

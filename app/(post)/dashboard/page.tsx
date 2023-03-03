@@ -73,12 +73,12 @@ async function Dashboardpage() {
               </div>
 
               <div className="flex flex-col items-center lg:flex-row gap-2 lg:gap-5">
-                <Link href={`/post/${postInfo.id}`} prefetch={false}>
+                <Link href={`/post/${postInfo.id}`}>
                   <button className="text-xs font-bold bg-cyan-900 px-3 py-1.5 rounded  uppercase">
                     Details
                   </button>
                 </Link>
-                <Link href={`/edit-post/${postInfo.id}`} prefetch={false}>
+                <Link href={`/edit-post/${postInfo.id}`}>
                   <button className="text-xs font-bold bg-blue-900 px-3 py-1.5 rounded  uppercase">
                     Edit
                   </button>
