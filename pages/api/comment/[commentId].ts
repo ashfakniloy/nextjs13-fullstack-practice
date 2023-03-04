@@ -3,7 +3,7 @@ import { prisma } from "../../../lib/prisma";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "../auth/[...nextauth]";
 
-export default async function commenthandler(
+export default async function commentidhandler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {

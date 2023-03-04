@@ -8,7 +8,7 @@ import { ClearIcon } from "./Icons/ClearIcon";
 function Search() {
   const [title, setTitle] = useState("");
 
-  const debouncedValue = useDebounce(title, 700);
+  const debouncedValue = useDebounce(title, 500);
 
   const [searchResult, setSearchResult] = useState<
     null | { id: String; title: string }[]

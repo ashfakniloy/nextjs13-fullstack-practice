@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { prisma } from "../../../lib/prisma";
 
-export default async function signuphandler(
+export default async function signinhandler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
