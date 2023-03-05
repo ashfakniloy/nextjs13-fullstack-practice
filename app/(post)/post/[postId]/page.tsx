@@ -1,14 +1,16 @@
 import { getServerSession } from "next-auth";
-import { formatDistanceToNow } from "date-fns";
+// import { formatDistanceToNow } from "date-fns";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import CommentsForm from "../../../../components/CommentsForm";
 import LikeButton from "../../../../components/LikeButton";
 import { prisma } from "../../../../lib/prisma";
 import { authOptions } from "../../../../pages/api/auth/[...nextauth]";
-import DeleteComment from "../../../../components/DeleteComment";
+// import DeleteComment from "../../../../components/DeleteComment";
 import Back from "../../../../components/Back";
 import type { Metadata } from "next";
+import { Suspense } from "react";
+import Comments from "../../../../components/Comments";
 
 export const dynamic = "force-dynamic";
 
@@ -42,16 +44,21 @@ async function getPost(postId: string) {
           },
         },
       },
-      comments: {
-        include: {
-          user: {
-            select: {
-              username: true,
-              id: true,
-            },
-          },
+      _count: {
+        select: {
+          comments: true,
         },
       },
+      // comments: {
+      //   include: {
+      //     user: {
+      //       select: {
+      //         username: true,
+      //         id: true,
+      //       },
+      //     },
+      //   },
+      // },
     },
   });
 
@@ -78,7 +85,7 @@ export async function generateMetadata({
 async function SinglePostpage({ params: { postId } }: Props) {
   const post: Post = await getPost(postId);
 
-  console.log("singlepost", post);
+  // console.log("singlepost", post);
 
   if (!post) {
     notFound();
@@ -117,7 +124,18 @@ async function SinglePostpage({ params: { postId } }: Props) {
       <p className="mt-7 text-gray-300">{post.description}</p>
       <div className="mt-5 flex items-center gap-10">
         <LikeButton postId={postId} likes={post.likes} />
-        {post.comments?.length ? (
+
+        {Number(post._count?.comments) > 0 && (
+          <p className="text-sm text-gray-300">
+            {Number(post._count?.comments) > 1 ? (
+              <span>{post._count?.comments} Comments</span>
+            ) : (
+              <span>{post._count?.comments} Comment</span>
+            )}
+          </p>
+        )}
+
+        {/* {post.comments?.length ? (
           <div className="text-sm text-gray-300">
             {post.comments.length > 1 ? (
               <span>{post.comments.length} Comments</span>
@@ -127,7 +145,7 @@ async function SinglePostpage({ params: { postId } }: Props) {
           </div>
         ) : (
           ""
-        )}
+        )} */}
       </div>
 
       <div className="mt-3">
@@ -138,7 +156,13 @@ async function SinglePostpage({ params: { postId } }: Props) {
             Log in to comment
           </Link>
         )}
-        <div className="mt-4 w-full max-w-[500px]">
+
+        <Suspense fallback={<p>Loading Comments...</p>}>
+          {/* @ts-expect-error Server Component */}
+          <Comments postId={postId} myId={myId} authorId={post.user?.id} />
+        </Suspense>
+
+        {/* <div className="mt-4 w-full max-w-[500px]">
           <p className="">
             {post.comments?.length ? "Comments" : "No comments yet"}
           </p>
@@ -170,7 +194,7 @@ async function SinglePostpage({ params: { postId } }: Props) {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

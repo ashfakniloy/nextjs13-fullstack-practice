@@ -1,22 +1,5 @@
 import Link from "next/link";
-import { prisma } from "../lib/prisma";
 import LikeButton from "./LikeButton";
-
-// async function getPostLikes(id: String) {
-//   const response = await prisma.like.findMany({
-//     where: {
-//       postId: id,
-//     },
-//     select: {
-//       user: true,
-//       createdAt: true,
-//     },
-//   });
-
-//   const data = JSON.parse(JSON.stringify(response));
-
-//   return data;
-// }
 
 function Post({
   id,
@@ -26,12 +9,9 @@ function Post({
   user,
   createdAt,
   likes,
-  comments,
+  // comments,
+  _count,
 }: Post) {
-  // const likes = await getPostLikes(id);
-
-  // console.log("likes", likes);
-
   return (
     <div className="bg-gray-900 p-7 flex justify-between items-center gap-3 lg:gap-[100px] rounded-lg">
       <div className="">
@@ -59,7 +39,17 @@ function Post({
         <div className="mt-1 flex justify-between items-center md:w-[220px]">
           <LikeButton postId={id} likes={likes} />
 
-          {comments?.length ? (
+          {Number(_count?.comments) > 0 && (
+            <Link href={`/post/${id}`} className="text-sm text-gray-300">
+              {Number(_count?.comments) > 1 ? (
+                <span>{_count?.comments} Comments</span>
+              ) : (
+                <span>{_count?.comments} Comment</span>
+              )}
+            </Link>
+          )}
+
+          {/* {comments?.length ? (
             <Link
               href={`/post/${id}`}
               className="text-sm text-gray-300 hover:text-gray-200"
@@ -72,7 +62,7 @@ function Post({
             </Link>
           ) : (
             ""
-          )}
+          )} */}
 
           {/* {comments?.length ? (
             <Link

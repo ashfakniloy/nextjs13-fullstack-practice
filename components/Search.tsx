@@ -31,7 +31,7 @@ function Search() {
       if (res.ok) {
         setSearchResult(data);
         setLoading(false);
-        console.log("data", data);
+        // console.log("data", data);
       } else {
         console.log(data);
         setLoading(false);

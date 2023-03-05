@@ -8,7 +8,7 @@ import DynamicLink from "./DynamicLink";
 async function Navbar() {
   const session = await getServerSession(authOptions);
 
-  console.log("session", session?.user);
+  // console.log("session", session?.user);
 
   return (
     <div className="flex flex-col lg:flex-row justify-between items-center py-4 border-b border-gray-600">

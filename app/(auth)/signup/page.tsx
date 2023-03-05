@@ -26,7 +26,7 @@ function SignupPage() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(user);
+    // console.log(user);
 
     const signupToast = toast.loading("Loading...");
 

@@ -6,7 +6,7 @@ async function UserLayout({ children }: { children: React.ReactNode }) {
   const session = await getServerSession(authOptions);
   // const router = useRouter();
 
-  console.log(session);
+  // console.log(session);
 
   if (session) {
     redirect("/");

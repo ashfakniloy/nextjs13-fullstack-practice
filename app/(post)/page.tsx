@@ -4,7 +4,7 @@ import { prisma } from "../../lib/prisma";
 // import { authOptions } from "../../pages/api/auth/[...nextauth]";
 import Search from "../../components/Search";
 import Pagination from "../../components/Pagination";
-import { RefreshPage } from "../../components/RefreshPage";
+// import { RefreshPage } from "../../components/RefreshPage";
 
 export const dynamic = "force-dynamic";
 
@@ -54,7 +54,13 @@ async function getPosts(pageNumber: number, limitNumber: number) {
           },
         },
       },
-      comments: true,
+      _count: {
+        select: {
+          likes: true,
+          comments: true,
+        },
+      },
+      // comments: true,
     },
   });
 
@@ -72,10 +78,10 @@ async function HomePage({ searchParams: { page, limit } }: SearchParams) {
 
   const data = await getPosts(pageNumber, limitNumber);
 
+  // console.log("data", data);
+
   const posts: Post[] = data.posts;
   const postCount: number = data.count;
-
-  console.log("PAGEPARAMS", limit);
 
   return (
     <div className="">
@@ -104,7 +110,8 @@ async function HomePage({ searchParams: { page, limit } }: SearchParams) {
               createdAt={post.createdAt}
               updatedAt={post.updatedAt}
               likes={post.likes}
-              comments={post.comments}
+              // comments={post.comments}
+              _count={post._count}
             />
           ))
         ) : (

@@ -17,6 +17,10 @@ type Post = {
   updatedAt: string;
   likes?: Like[];
   comments?: UserComment[];
+  _count?: {
+    comments?: number;
+    likes?: number;
+  };
 };
 
 type UserComment = {
