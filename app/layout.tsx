@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html>
       <body
-        className={`bg-gray-800 text-gray-100 lg:max-w-[1000px] mx-3 lg:mx-auto ${inter.className}`}
+        className={`bg-[#111111]  text-gray-100 lg:max-w-[1000px] mx-3 lg:mx-auto ${inter.className}`}
       >
         <Toaster
           toastOptions={{

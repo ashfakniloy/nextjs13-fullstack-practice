@@ -53,9 +53,9 @@ function Search() {
         <div className="relative">
           <input
             type="text"
-            className={`w-full bg-gray-700 text-gray-200 p-2 outline-none rounded-md border-b ${
+            className={`w-full bg-gray-800 text-gray-200 p-2 outline-none rounded-md border-b ${
               searchResult
-                ? "rounded-b-none border-gray-600"
+                ? "rounded-b-none border-gray-700"
                 : "border-transparent"
             }`}
             placeholder="Search Post"
@@ -79,12 +79,12 @@ function Search() {
           )}
         </div>
         {searchResult && (
-          <div className="bg-gray-700 absolute top-[41px] w-full rounded-b-md overflow-hidden text-sm">
+          <div className="bg-gray-800 absolute top-[41px] w-full rounded-b-md overflow-hidden text-sm">
             {searchResult.length > 0 ? (
               <div className="max-h-[265px] overflow-y-auto scrollbar-thin scrollbar-track-gray-600/50 scrollbar-thumb-gray-500/50">
                 {searchResult.map((result, i) => (
                   <Link key={i} href={`/post/${result.id}`}>
-                    <p key={i} className="p-3 hover:bg-gray-600">
+                    <p key={i} className="p-3 hover:bg-gray-700">
                       {result.title}
                     </p>
                   </Link>

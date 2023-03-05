@@ -18,7 +18,7 @@ function Logout() {
 
   return (
     <button
-      className="bg-red-800 text-sm font-bold rounded px-2 py-1.5"
+      className="bg-red-900 text-sm font-bold rounded px-2 py-1.5"
       onClick={handleLogout}
     >
       Logout

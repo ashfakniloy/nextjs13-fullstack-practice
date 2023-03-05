@@ -139,7 +139,7 @@ function PostForm({ initialState, formType, postId }: Props) {
         </div>
         <button
           type="submit"
-          className=" bg-cyan-800 px-4 py-2 rounded text-sm font-bold text-gray-200"
+          className=" bg-cyan-900 px-4 py-2 rounded text-sm font-bold text-gray-200"
         >
           Submit
         </button>

@@ -11,7 +11,7 @@ async function Navbar() {
   // console.log("session", session?.user);
 
   return (
-    <div className="flex flex-col lg:flex-row justify-between items-center py-4 border-b border-gray-600">
+    <div className="flex flex-col lg:flex-row justify-between items-center py-4 border-b border-gray-700">
       <div className="text-3xl font-bold tracking-widest">
         <Link href="/">logo</Link>
         {/* <DynamicLink href="/">logo</DynamicLink> */}
@@ -34,10 +34,10 @@ async function Navbar() {
       ) : (
         <div className="mt-5 lg:mt-0 text-sm font-medium space-x-7">
           <Link href="/signup">
-            <button className="bg-cyan-600 px-2 py-1.5 rounded">Signup</button>
+            <button className="bg-green-900 px-2 py-1.5 rounded">Signup</button>
           </Link>
           <Link href="/signin">
-            <button className="bg-blue-600 px-2 py-1.5 rounded">Login</button>
+            <button className="bg-blue-900 px-2 py-1.5 rounded">Login</button>
           </Link>
         </div>
       )}

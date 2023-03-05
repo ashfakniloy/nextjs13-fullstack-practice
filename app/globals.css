@@ -4,7 +4,7 @@
 
 @layer base {
   .field {
-    @apply w-full bg-gray-700 text-gray-200 p-2 rounded outline-none border-2 border-gray-800 focus:border-gray-600;
+    @apply w-full bg-gray-800 text-gray-200 p-2 rounded outline-none border-2 border-gray-800 focus:border-gray-600;
   }
 
   .paginateButton {

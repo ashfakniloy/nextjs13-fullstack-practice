@@ -64,7 +64,7 @@ async function Dashboardpage() {
           {postsInfo?.map((postInfo) => (
             <div
               key={postInfo.id}
-              className="bg-gray-900 p-3 lg:p-5 flex justify-between items-center gap-3 lg:gap-[100px] rounded-lg"
+              className="bg-black p-3 lg:p-5 flex justify-between items-center gap-3 lg:gap-[100px] rounded-lg"
             >
               <div className="">
                 <p className="text-lg font-medium text-gray-300">

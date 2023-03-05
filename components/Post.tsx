@@ -13,7 +13,7 @@ function Post({
   _count,
 }: Post) {
   return (
-    <div className="bg-gray-900 p-7 flex justify-between items-center gap-3 lg:gap-[100px] rounded-lg">
+    <div className="bg-black p-7 flex justify-between items-center gap-3 lg:gap-[100px] rounded-lg">
       <div className="">
         <div className="flex items-center gap-7">
           <p className="text-xl font-medium text-gray-300">{title}</p>
@@ -77,7 +77,7 @@ function Post({
         </div>
       </div>
       <Link href={`/post/${id}`}>
-        <button className="text-xs font-bold bg-cyan-800 px-3 py-2 rounded-md details uppercase">
+        <button className="text-xs font-bold bg-cyan-900 px-3 py-2 rounded-md details uppercase">
           Details
         </button>
       </Link>
