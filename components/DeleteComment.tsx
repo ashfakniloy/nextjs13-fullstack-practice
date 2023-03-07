@@ -8,7 +8,10 @@ function DeleteComment({ id }: { id: string }) {
 
   const handleDelete = async () => {
     console.log("delete", id);
-    const res = await fetch(`/api/comment/${id}`, {
+    // const url = `/api/comment-old/${id}`
+    const url = `/api/comment?commentId=${id}`;
+
+    const res = await fetch(url, {
       method: "DELETE",
     });
 

@@ -25,10 +25,13 @@ function LikeButton({
 
   const hasLiked = likes?.find((like) => like.userId === session?.user.id);
 
+  // const url = `/api/like-old/${postId}`;
+  const url = `/api/like?postId=${postId}`;
+
   const handleLike = async () => {
     setLike(true);
 
-    const res = await fetch(`/api/reaction/${postId}`, {
+    const res = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json(",
@@ -49,7 +52,7 @@ function LikeButton({
   const handleUnlike = async () => {
     setLike(false);
 
-    const res = await fetch(`/api/reaction/${postId}`, {
+    const res = await fetch(url, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json(",

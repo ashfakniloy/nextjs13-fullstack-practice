@@ -59,4 +59,6 @@ model Post {
   userId      String
   likes       Like[]
   comments    Comment[]
+
+  @@unique([id, userId])
 }

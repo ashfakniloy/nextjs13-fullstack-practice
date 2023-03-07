@@ -7,10 +7,6 @@ export default async function postIdhandler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  // if (req.method !== "PUT" || "PATCH" || "DELETE") {
-  //   return res.status(400).json({ error: `Method ${req.method} not allowed` });
-  // }
-
   const { postId } = req.query;
 
   const session = await getServerSession(req, res, authOptions);

@@ -2,8 +2,6 @@ import Link from "next/link";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "../pages/api/auth/[...nextauth]";
 import Logout from "./Logout";
-import DynamicLink from "./DynamicLink";
-// import Navigations from "./Navigations";
 
 async function Navbar() {
   const session = await getServerSession(authOptions);
@@ -14,20 +12,18 @@ async function Navbar() {
     <div className="flex flex-col lg:flex-row justify-between items-center py-4 border-b border-gray-700">
       <div className="text-3xl font-bold tracking-widest">
         <Link href="/">logo</Link>
-        {/* <DynamicLink href="/">logo</DynamicLink> */}
       </div>
 
       {session?.user ? (
         <div className="mt-3 lg:mt-0 flex flex-col lg:flex-row items-center gap-2 lg:gap-6 text-sm font-medium">
           <p className="text-gray-400 lg:pr-8">User: {session.user.username}</p>
-          {/* <Navigations /> */}
 
           <div className="space-x-6">
             <Link href="/">Home</Link>
-            {/* <DynamicLink href="/">Home</DynamicLink> */}
+
             <Link href="/add-post">Add Post</Link>
             <Link href="/dashboard">Dashboard</Link>
-            {/* <DynamicLink href="/dashboard">Dashboard</DynamicLink> */}
+
             <Logout />
           </div>
         </div>

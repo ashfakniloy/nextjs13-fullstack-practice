@@ -8,7 +8,10 @@ function DeletePost({ postId }: { postId: string }) {
   const handleDelete = async () => {
     const loadingToast2 = toast.loading("Loading...");
 
-    const res = await fetch(`/api/post/${postId}`, {
+    // const url = `/api/post-old/${postId}`
+    const url = `/api/post?postId=${postId}`;
+
+    const res = await fetch(url, {
       method: "DELETE",
     });
 

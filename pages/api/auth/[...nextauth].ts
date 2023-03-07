@@ -31,6 +31,8 @@ export const authOptions: NextAuthOptions = {
           throw new Error("Incorrect Password");
         }
 
+        console.log("auth response", response);
+
         const user = {
           id: response.id,
           username: response.username,

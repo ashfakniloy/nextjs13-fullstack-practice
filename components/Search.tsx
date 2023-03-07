@@ -23,7 +23,8 @@ function Search() {
   useEffect(() => {
     const getSearch = async () => {
       setSearchResult(null);
-      const res = await fetch(`/api/search/${debouncedValue}`, {
+      // const res = await fetch(`/api/search-old/${debouncedValue}`, {
+      const res = await fetch(`/api/search?title=${debouncedValue}`, {
         cache: "no-store",
       });
       const data = await res.json();

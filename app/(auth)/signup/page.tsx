@@ -30,7 +30,10 @@ function SignupPage() {
 
     const signupToast = toast.loading("Loading...");
 
-    const res = await fetch("/api/user/signup", {
+    // const url = "/api/signup-old"
+    const url = "/api/signup";
+
+    const res = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

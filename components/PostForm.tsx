@@ -32,8 +32,11 @@ function PostForm({ initialState, formType, postId }: Props) {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    // const url = "/api/post-old"
+    const url = "/api/post";
+
     if (formType === "post") {
-      const res = await fetch("/api/post", {
+      const res = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -73,7 +76,7 @@ function PostForm({ initialState, formType, postId }: Props) {
     if (formType === "edit") {
       // console.log("edit", post);
 
-      const res = await fetch(`/api/post/${postId}`, {
+      const res = await fetch(`${url}?postId=${postId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
